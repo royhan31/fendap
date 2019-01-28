@@ -40,8 +40,13 @@ class LoginController extends Controller
       ];
 
       if (Auth::guard('admin')->attempt($credential, $request->member)) {
-        return redirect()->intented(route('home'));
+        return redirect()->route('home');
       }
       return redirect()->back()->withInput($request->only('email','remember'));
+    }
+
+    public function logout(){
+      Auth::guard('admin')->logout();
+      return redirect()->route('login');
     }
 }
