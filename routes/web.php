@@ -12,16 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
 
 //Auth::routes();
-
+//Route::get('/','AuthAdmin\LoginController@showLoginForm');
 Route::get('/login','AuthAdmin\LoginController@showLoginForm')->name('login');
 Route::post('/login','AuthAdmin\LoginController@login')->name('admin.login');
 Route::post('/logout','AuthAdmin\LoginController@logout')->name('logout');
-
-//Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home/dashboard', 'AdminController@index')->name('home');
 // Route::group(['prefix' => 'admin'], function(){
 //
