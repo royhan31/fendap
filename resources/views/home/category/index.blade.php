@@ -42,8 +42,8 @@
                     <button data-toggle="modal" data-target="#hapus{{$category->id}}" class="btn btn-danger"><i class="mdi mdi-delete"></i></button>
                   </td>
               </tr>
-              @include('home.category.modal')
               @php($no++)
+              @include('home.category.modal')
               @endforeach
             </tbody>
           </table>
