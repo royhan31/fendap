@@ -1,30 +1,4 @@
-<!-- modal tambah -->
-<div class="modal fade" id="tambah" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Tambah Kategori</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <form action="{{route('category.store')}}" method="post">
-        @csrf
-      <div class="modal-body">
-        <div class="form-group">
-          <label for="cname">Nama</label>
-          <input class="form-control" name="name" type="text" required>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        <input type="submit" value="Simpan" class="btn btn-success">
-      </div>
-      </form>
-    </div>
-  </div>
-</div>
-<!-- akhir modal tambah -->
+
 <!-- modal edit -->
 <div class="modal fade" id="edit{{$category->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel-2" aria-hidden="true">
   <div class="modal-dialog" role="document">
