@@ -8,23 +8,24 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $categories = Category::orderBy('name','ASC')->get();
+        return view('home.category.index',compact('categories'));
     }
 
     /**
@@ -35,29 +36,16 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+      $this->validate($request,[
+        'name' => 'required|min:4|unique:categories'
+      ]);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Category  $category
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Category $category)
-    {
-        //
-    }
+      Category::create([
+        'name' => $request->name,
+        'slug' => str_slug($request->name),
+      ]);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Category  $category
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Category $category)
-    {
-        //
+      return redirect()->back()->with('success','Kategori berhasil ditambahkan');
     }
 
     /**
@@ -69,7 +57,15 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+      $this->validate($request,[
+        'name' => 'required|min:4|unique:categories'
+      ]);
+      $category->update([
+        'name' => $request->name,
+        'slug' => str_slug($request->name),
+      ]);
+
+      return redirect()->back()->with('success','Kategori berhasil diubah');
     }
 
     /**
@@ -80,6 +76,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+        return redirect()->back()->with('success','Kategori berhasil dihapus');
     }
 }
