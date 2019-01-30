@@ -1,5 +1,5 @@
 <!-- modal tambah -->
-<!-- <div class="modal fade" id="tambah" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="tambah" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -17,38 +17,13 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         <input type="submit" value="Simpan" class="btn btn-success">
       </div>
       </form>
     </div>
   </div>
-</div> -->
-<div class="modal fade" tabindex="-1" role="dialog" id="tambah">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Tambah Kategori</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <form class="" action="" method="post">
-            <div class="modal-body">
-                <div class="form-group">
-                  <h6><label>Are you sure delete category  ? </label></h6>
-                </div>
-              </div>
-              <div class="modal-footer bg-whitesmoke br">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <input type="submit" name="delete" value="Delete" class="btn btn-danger">
-                <input type="hidden" name="category" value="">
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+</div>
 <!-- akhir modal tambah -->
 <!-- modal edit -->
 <div class="modal fade" id="edit{{$category->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel-2" aria-hidden="true">
@@ -70,7 +45,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         <input type="submit" value="Edit" class="btn btn-success">
       </div>
       </form>
@@ -96,7 +71,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         <input type="submit" value="hapus" class="btn btn-danger">
       </div>
       </form>

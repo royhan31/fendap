@@ -94,20 +94,20 @@
           navItemClicked.removeClass('show-submenu');
         }
         $(this).toggleClass('show-submenu');
-      }        
+      }
     })
 
     /* Fix the bottom navbar to top on scrolling */
-    var navbarStickyPoint = $('.bottom-navbar').offset().top;
-    $(window).scroll(function() {
-      if(window.matchMedia('(min-width: 992px)').matches) {
-        var header = $('.horizontal-menu');
-        if ($(window).scrollTop() > navbarStickyPoint) {
-          $(header).addClass('fixed-on-scroll');
-        } else {
-          $(header).removeClass('fixed-on-scroll');
-        }
-      }
-    });
+    // var navbarStickyPoint = $('.bottom-navbar').offset().top;
+    // $(window).scroll(function() {
+    //   if(window.matchMedia('(min-width: 992px)').matches) {
+    //     var header = $('.horizontal-menu');
+    //     if ($(window).scrollTop() > navbarStickyPoint) {
+    //       $(header).addClass('fixed-on-scroll');
+    //     } else {
+    //       $(header).removeClass('fixed-on-scroll');
+    //     }
+    //   }
+    // });
   });
 })(jQuery);
