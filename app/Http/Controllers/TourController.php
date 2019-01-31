@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Tour;
+use Storage;
 use Illuminate\Http\Request;
 
 class TourController extends Controller
@@ -40,7 +41,11 @@ class TourController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $this->validate($request,[
+        'title' => 'required|min:5',
+        'description' => 'required|min:10'
+        'image' => 'required|mime:jpg,jpeg,png',
+      ]);
     }
 
     /**

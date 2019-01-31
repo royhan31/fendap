@@ -3,6 +3,9 @@
 <div class="card">
   <div class="card-body">
     <h4>Pariwisata</h4>
+    <div class="text-right" style="margin-button:10px">
+      <a href="" class="btn btn-primary">Tambah</a>
+    </div>
   </div>
 </div>
 <br>
@@ -27,6 +30,7 @@
                 <button class="btn btn-danger btn-sm" data-target="#tambah" data-toggle="modal">Hapus</button>
                 </div>
               </div>
+              <br>
             </div>
           </div>
         </div>

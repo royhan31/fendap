@@ -15,7 +15,13 @@ class CreateToursTable extends Migration
     {
         Schema::create('tours', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title');
+            $table->integer('category_id')->unsigned();
+            $table->text('description');
+            $table->string('image');
             $table->timestamps();
+
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 
