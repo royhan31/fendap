@@ -7,15 +7,15 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="{{route('category')}}">
-        <i class="mdi mdi-format-list-bulleted menu-icon"></i>
-        <span class="menu-title">kategori</span>
+      <a class="nav-link" href="{{route('tour')}}">
+        <i class="mdi mdi-folder-image menu-icon"></i>
+        <span class="menu-title">Pariwisata</span>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="">
-        <i class="mdi mdi-folder-image menu-icon"></i>
-        <span class="menu-title">Pariwisata</span>
+      <a class="nav-link" href="{{route('category')}}">
+        <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+        <span class="menu-title">kategori</span>
       </a>
     </li>
   </ul>
