@@ -33,8 +33,8 @@
                         </span>
                       </div>
                     </div>
-                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                    <button class="btn btn-light">Cancel</button>
+                    <button type="submit" class="btn btn-primary mr-2">Simpan</button>
+                    <a href="{{route('tour')}}" class="btn btn-light">Kembali</a>
                 </form>
             </div>
         </div>

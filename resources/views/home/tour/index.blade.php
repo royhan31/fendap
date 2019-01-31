@@ -9,15 +9,27 @@
   </div>
 </div>
 <br>
+@if(session()->has('success'))
+<div class="alert alert-fill-success" role="alert">
+  <i class="mdi mdi-alert-circle"></i>
+  {{ session()->get('success') }}
+</div>
+@endif
+<br>
 <div class="row">
   <div class="col-12">
     <div class="card">
       <div class="card-body">
+        @if($tours->isEmpty())
+        <div class="text-center">
+          <h2>Tidak ada wisata</h2>
+        </div>
+        @else
         <div class="row">
           <div class="col-12">
             <div class="row portfolio-grid">
               @foreach($tours as $tour)
-              <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
+              <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 mb-5">
                 <figure class="effect-text-in">
                   <img src="{{asset('images/'.$tour->image)}}" alt="image"/>
                   <figcaption>
@@ -27,6 +39,7 @@
                 </figure>
                   <div class="text-center">
                 <a href="{{route('tour.detail',$tour)}}" class="btn btn-success btn-sm">Detail</a>
+                <a href="{{route('tour.edit',$tour)}}" class="btn btn-info btn-sm">Edit</a>
                 <button class="btn btn-danger btn-sm" data-target="#hapus{{$tour->id}}" data-toggle="modal">Hapus</button>
                 </div>
               </div>
@@ -57,10 +70,10 @@
               </div>
               <!-- akhir modal hapus -->
               @endforeach
-              <br>
             </div>
           </div>
         </div>
+        @endif
       </div>
     </div>
   </div>

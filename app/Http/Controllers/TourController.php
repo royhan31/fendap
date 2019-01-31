@@ -81,7 +81,8 @@ class TourController extends Controller
      */
     public function edit(Tour $tour)
     {
-        return view('home.tour.update-tour');
+        $categories = Category::all();
+        return view('home.tour.update-tour',compact('tour','categories'));
     }
 
     /**

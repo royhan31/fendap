@@ -35,7 +35,7 @@ class ApiTourController extends Controller
     ->join('categories','categories.id','=','tours.category_id')
     ->select('tours.id','tours.title','categories.name as category','tours.description',
     'tours.image','tours.created_at')
-    ->where('categories.id',$category)
+    ->where('categories.slug',$category)
     ->get();
 
     return [
