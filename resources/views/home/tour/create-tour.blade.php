@@ -5,32 +5,33 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Form tambah wisata</h4>
-                <form class="forms-sample">
+                <form class="forms-sample" action="{{route('tour.store')}}" method="post" enctype="multipart/form-data">
+                  @csrf
                     <div class="form-group">
-                        <label for="title">Title</label>
-                        <input type="text" class="form-control" id="title" placeholder="Enter title">
+                        <label for="title">Judul</label>
+                        <input type="text" class="form-control" name="title" placeholder="Masukan Judul" required>
                     </div>
                     <div class="form-group">
-                        <label for="category">Category</label>
-                        <select class="form-control" id="category">
-                            <option>-- Select Category --</option>
-                            <option>Dummy 1</option>
-                            <option>Dummy 2</option>
+                        <label for="category">Kategori</label>
+                        <select class="form-control" name="category">
+                            @foreach($categories as $category)
+                            <option value="{{$category->id}}">{{$category->name}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="description">Description</label>
-                        <textarea class="form-control" id="description" rows="8" placeholder="Enter description"></textarea>
+                        <label for="description">Deskripsi</label>
+                        <textarea class="form-control" name="description" rows="8" placeholder="Masukan Deskripsi" required></textarea>
                     </div>
                     <div class="form-group">
-                        <label>Image</label>
-                        <input type="file" name="img[]" class="file-upload-default">
-                        <div class="input-group col-xs-12">
-                            <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
-                            <span class="input-group-append">
+                      <label>Gambar</label>
+                      <input type="file" name="image" class="file-upload-default">
+                      <div class="input-group col-xs-12">
+                        <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                        <span class="input-group-append">
                           <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
                         </span>
-                        </div>
+                      </div>
                     </div>
                     <button type="submit" class="btn btn-primary mr-2">Submit</button>
                     <button class="btn btn-light">Cancel</button>

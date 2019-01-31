@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Tour;
+use App\Category;
 use Storage;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,8 @@ class TourController extends Controller
      */
     public function index()
     {
-        return view('home.tour.index');
+        $tours = Tour::all();
+        return view('home.tour.index',compact('tours'));
     }
 
     /**
@@ -30,7 +32,8 @@ class TourController extends Controller
      */
     public function create()
     {
-        return view('home.tour.create-tour');
+        $categories = Category::all();
+        return view('home.tour.create-tour', compact('categories'));
     }
 
     /**
@@ -44,8 +47,19 @@ class TourController extends Controller
       $this->validate($request,[
         'title' => 'required|min:5',
         'description' => 'required|min:10',
-        'image' => 'required|mime:jpg,jpeg,png',
+        'image' => 'required|mimes:jpg,jpeg,png',
       ]);
+      $image = $request->file('image')->store('pictures');
+
+      Tour::create([
+        'title' => $request->title,
+        'category_id' => $request->category,
+        'description' => $request->description,
+        'image' => $image,
+      ]);
+
+      return redirect()->route('tour')->with('success','Wisata berhasil ditambahkan');
+
     }
 
     /**

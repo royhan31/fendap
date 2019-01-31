@@ -29,6 +29,6 @@ Route::post('/home/category/{category}','CategoryController@destroy')->name('cat
 
 Route::get('/home/tour','TourController@index')->name('tour');
 Route::get('/home/tour/create','TourController@create')->name('tour.create');
+Route::post('/home/tour/create','TourController@store')->name('tour.store');
 Route::get('/home/tour/edit','TourController@edit')->name('tour.edit');
 Route::get('/home/tour/detail','TourController@show')->name('tour.detail');
-
