@@ -43,7 +43,7 @@ class TourController extends Controller
     {
       $this->validate($request,[
         'title' => 'required|min:5',
-        'description' => 'required|min:10'
+        'description' => 'required|min:10',
         'image' => 'required|mime:jpg,jpeg,png',
       ]);
     }
