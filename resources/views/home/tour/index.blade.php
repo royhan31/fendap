@@ -26,11 +26,36 @@
                   </figcaption>
                 </figure>
                   <div class="text-center">
-                <button class="btn btn-success btn-sm" data-target="#tambah" data-toggle="modal">Detail</button>
-                <button class="btn btn-info btn-sm" data-target="#tambah" data-toggle="modal">Edit</button>
-                <button class="btn btn-danger btn-sm" data-target="#tambah" data-toggle="modal">Hapus</button>
+                <a href="{{route('tour.detail',$tour)}}" class="btn btn-success btn-sm">Detail</a>
+                <button class="btn btn-danger btn-sm" data-target="#hapus{{$tour->id}}" data-toggle="modal">Hapus</button>
                 </div>
               </div>
+              <!-- modal hapus -->
+              <div class="modal fade" id="hapus{{$tour->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Hapus Wisata</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <form action="{{route('tour.destroy',$tour)}}" method="post">
+                      @csrf
+                    <div class="modal-body">
+                      <div class="form-group">
+                        <label for="cname">Apakah anda yakin akan menghapus wisata <b>{{$tour->title}}</b> ?</label>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                      <input type="submit" value="hapus" class="btn btn-danger">
+                    </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <!-- akhir modal hapus -->
               @endforeach
               <br>
             </div>

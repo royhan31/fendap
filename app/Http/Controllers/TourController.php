@@ -70,7 +70,7 @@ class TourController extends Controller
      */
     public function show(Tour $tour)
     {
-        return view('home.tour.detail-tour');
+        return view('home.tour.detail-tour',compact('tour'));
     }
 
     /**
@@ -104,6 +104,11 @@ class TourController extends Controller
      */
     public function destroy(Tour $tour)
     {
-        //
+      $image_path = $tour->image;
+      if (Storage::exists($image_path)) {
+          Storage::delete($image_path);
+      }
+      $tour->delete();
+      return redirect()->route('tour')->with('success','Wisata berhasil dihapus');
     }
 }
