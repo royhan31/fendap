@@ -4,7 +4,7 @@
   <div class="card-body">
     <h4>Pariwisata</h4>
     <div class="text-right" style="margin-button:10px">
-      <a href="" class="btn btn-primary">Tambah</a>
+      <a href="{{ route('tour.create') }}" class="btn btn-primary">Tambah</a>
     </div>
   </div>
 </div>

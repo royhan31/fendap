@@ -22,6 +22,12 @@
                         <label for="description">Description</label>
                         <textarea class="form-control" id="description" rows="8" placeholder="Enter description">It just dummy description</textarea>
                     </div>
+                    <div class="d-flex justify-content-start align-items-start mb-3">
+                        <div class="col-4 form-group">
+                            <img src="{{ asset('asset/images/samples/1280x768/12.jpg') }}" alt="sample" class="rounded mw-100"/>
+                            <p class="text-info mt-3">This is old image</p>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label>Image</label>
                         <input type="file" name="img[]" class="file-upload-default">
