@@ -22,8 +22,7 @@
                   <img src="{{asset('images/'.$tour->image)}}" alt="image"/>
                   <figcaption>
                     <h4>{{$tour->title}}</h4>
-                    <p></p>
-                    <p>{{$tour->description}}</p>
+                    <p>{{$tour->category->name}}</p>
                   </figcaption>
                 </figure>
                   <div class="text-center">

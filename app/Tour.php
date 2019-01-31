@@ -11,6 +11,6 @@ class Tour extends Model
   ];
 
   public function category(){
-    return $this->belongsToMany(Category::class,'categories');
+    return $this->belongsTo(Category::class,'category_id');
   }
 }
