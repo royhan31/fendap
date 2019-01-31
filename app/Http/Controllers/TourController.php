@@ -30,7 +30,7 @@ class TourController extends Controller
      */
     public function create()
     {
-        //
+        return view('home.tour.create-tour');
     }
 
     /**
@@ -67,7 +67,7 @@ class TourController extends Controller
      */
     public function edit(Tour $tour)
     {
-        //
+        return view('home.tour.update-tour');
     }
 
     /**

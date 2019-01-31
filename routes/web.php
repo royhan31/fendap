@@ -28,3 +28,6 @@ Route::patch('/home/category/{category}','CategoryController@update')->name('cat
 Route::post('/home/category/{category}','CategoryController@destroy')->name('category.destroy');
 
 Route::get('/home/tour','TourController@index')->name('tour');
+Route::get('/home/tour/create','TourController@create')->name('tour.create');
+Route::get('/home/tour/edit','TourController@edit')->name('tour.edit');
+
