@@ -5,7 +5,7 @@
     <div class="card bg-gradient-danger text-white text-center card-shadow-danger">
       <div class="card-body">
         <h6 class="font-weight-normal">Total Pariwisata</h6>
-        <h2 class="mb-0">2</h2>
+        <h2 class="mb-0">{{count($tour)}}</h2>
       </div>
     </div>
   </div>

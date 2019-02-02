@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use App\Tour;
 
 class AdminController extends Controller
 {
@@ -25,6 +26,7 @@ class AdminController extends Controller
     public function index()
     {
         $category = Category::all();
-        return view('home.dashboard',compact('category'));
+        $tour = Tour::all();
+        return view('home.dashboard',compact('category','tour'));
     }
 }

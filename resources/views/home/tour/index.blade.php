@@ -31,7 +31,7 @@
               @foreach($tours as $tour)
               <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 mb-5">
                 <figure class="effect-text-in">
-                  <img src="{{asset('images/'.$tour->image)}}" alt="image"/>
+                  <img src="{{asset('images/'.$tour->image)}}" alt="image" height="150rem"/>
                   <figcaption>
                     <h4>{{$tour->title}}</h4>
                     <p>{{$tour->category->name}}</p>

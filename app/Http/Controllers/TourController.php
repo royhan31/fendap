@@ -21,7 +21,7 @@ class TourController extends Controller
      */
     public function index()
     {
-        $tours = Tour::all();
+        $tours = Tour::orderBy('id','DESC')->get();
         return view('home.tour.index',compact('tours'));
     }
 
