@@ -15,7 +15,7 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="{{ asset('asset/css/vertical-layout-light/style.css')}}">
   <!-- endinject -->
-  <link rel="shortcut icon" href="{{ asset('asset/images/favicon.png')}}" />
+  <link rel="shortcut icon" href="{{ asset('asset/images/bengkulu-mini.png')}}" />
 </head>
 
 <body class="sidebar-mini">
@@ -25,8 +25,10 @@
         <div class="row w-100">
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left p-5">
-              <div class="brand-logo">
-                <!-- <img src="{{ asset('asset/images/logo.svg')}}" alt="logo"> -->
+              <div class="brand-logo d-flex justify-content-center">
+                <div class="">
+                  <img src="{{ asset('asset/images/bengkulu.png')}}" alt="logo">
+                </div>
               </div>
               @if(session()->has('error'))
               <div class="alert alert-fill-danger" role="alert">
