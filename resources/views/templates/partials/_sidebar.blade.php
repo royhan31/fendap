@@ -12,16 +12,14 @@
 
   @if(url('home.tour')){
     {{Request::is('home/tour/edit/*') ? 'active' : ''}}
-  }@endif">
+  }@endif
+  @if(url('home.tour')){
+    {{Request::is('home/tour/detail/*') ? 'active' : ''}}
+  }@endif
+  ">
       <a class="nav-link" href="{{route('tour')}}">
         <i class="mdi mdi-folder-image menu-icon"></i>
         <span class="menu-title">Pariwisata</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{{route('category')}}">
-        <i class="mdi mdi-format-list-bulleted menu-icon"></i>
-        <span class="menu-title">kategori</span>
       </a>
     </li>
   </ul>
