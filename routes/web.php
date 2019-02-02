@@ -31,5 +31,6 @@ Route::get('/home/tour','TourController@index')->name('tour');
 Route::get('/home/tour/create','TourController@create')->name('tour.create');
 Route::post('/home/tour/create','TourController@store')->name('tour.store');
 Route::get('/home/tour/edit/{tour}','TourController@edit')->name('tour.edit');
+Route::patch('/home/tour/update/{tour}','TourController@update')->name('tour.update');
 Route::post('/home/tour/delete/{tour}','TourController@destroy')->name('tour.destroy');
 Route::get('/home/tour/detail/{tour}','TourController@show')->name('tour.detail');

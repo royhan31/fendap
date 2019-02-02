@@ -47,7 +47,7 @@ class TourController extends Controller
       $this->validate($request,[
         'title' => 'required|min:5',
         'description' => 'required|min:10',
-        'image' => 'required|mimes:jpg,jpeg,png',
+        'image' => 'required|max:2048|mimes:jpeg,png,jpeg',
       ]);
       $image = $request->file('image')->store('pictures');
 
@@ -94,7 +94,32 @@ class TourController extends Controller
      */
     public function update(Request $request, Tour $tour)
     {
-        //
+      $this->validate($request,[
+        'title' => 'required|min:5',
+        'description' => 'required|min:10',
+        'image' => 'max:2048|mimes:jpeg,png,jpeg',
+      ]);
+
+      if ($request->image) {
+        $image_path = $tour->image;
+        if (Storage::exists($image_path)) {
+          Storage::delete($image_path);
+        }
+        $image = $request->file('image')->store('pictures');
+          $tour->update([
+          'title' => $request->title,
+          'category_id' => $request->category,
+          'description' => $request->description,
+          'image' => $image,
+        ]);
+      }else{
+        $tour->update([
+        'title' => $request->title,
+        'category_id' => $request->category,
+        'description' => $request->description,
+      ]);
+      }
+      return redirect()->route('tour')->with('success','Wisata berhasil diubah');
     }
 
     /**
