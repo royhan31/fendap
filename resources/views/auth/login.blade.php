@@ -28,6 +28,12 @@
               <div class="brand-logo">
                 <!-- <img src="{{ asset('asset/images/logo.svg')}}" alt="logo"> -->
               </div>
+              @if(session()->has('error'))
+              <div class="alert alert-fill-danger" role="alert">
+                <i class="mdi mdi-alert-circle"></i>
+                {{ session()->get('error') }}
+              </div>
+              @endif
               <form class="pt-3" method="POST" action="{{ route('admin.login') }}">
                 @csrf
                 <div class="form-group">
@@ -47,16 +53,15 @@
                   @endif
                 </div>
                 <div class="mt-3">
-                  <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" >SIGN IN</button>
+                  <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" >Masuk</button>
                 </div>
                 <div class="my-2 d-flex justify-content-between align-items-center">
                   <div class="form-check">
                     <label class="form-check-label text-muted">
-                      <input type="checkbox" class="form-check-input">
-                      Keep me signed in
+                      <input type="checkbox" name="remember" class="form-check-input" {{ old('remember') ? 'checked' : '' }}>
+                      Ingat Saya
                     </label>
                   </div>
-                  <a href="#" class="auth-link text-black">Forgot password?</a>
                 </div>
               </form>
             </div>
@@ -78,6 +83,14 @@
   <script src="{{ asset('asset/js/template.js')}}"></script>
   <script src="{{ asset('asset/js/settings.js')}}"></script>
   <script src="{{ asset('asset/js/todolist.js')}}"></script>
+  <script>
+  window.setTimeout(function() {
+    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+    $(this).remove();
+  });
+  }, 5000);
+  </script>
+
 
   </body>
 </html>

@@ -23,9 +23,9 @@ Route::post('/logout','AuthAdmin\LoginController@logout')->name('logout');
 Route::get('/home/dashboard', 'AdminController@index')->name('home');
 
 Route::get('/home/category','CategoryController@index')->name('category');
-Route::post('/home/category','CategoryController@store')->name('category.store');
-Route::patch('/home/category/{category}','CategoryController@update')->name('category.update');
-Route::post('/home/category/{category}','CategoryController@destroy')->name('category.destroy');
+// Route::post('/home/category','CategoryController@store')->name('category.store');
+// Route::patch('/home/category/{category}','CategoryController@update')->name('category.update');
+// Route::post('/home/category/{category}','CategoryController@destroy')->name('category.destroy');
 
 Route::get('/home/tour','TourController@index')->name('tour');
 Route::get('/home/tour/create','TourController@create')->name('tour.create');

@@ -41,6 +41,8 @@ class LoginController extends Controller
 
       if (Auth::guard('admin')->attempt($credential, $request->member)) {
         return redirect()->route('home');
+      }else{
+        return redirect()->back()->with('error','Login Gagal')->withInput($request->only('email','remember'));
       }
       return redirect()->back()->withInput($request->only('email','remember'));
     }

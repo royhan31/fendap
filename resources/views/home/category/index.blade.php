@@ -16,9 +16,9 @@
 <div class="card">
   <div class="card-body">
     <h4 class="card-title">Kategori</h4>
-    <div class="text-right" style="margin-button:10px">
+    <!-- <div class="text-right" style="margin-button:10px">
       <button class="btn btn-info" data-target="#tambah" data-toggle="modal">Tambah</button>
-    </div>
+    </div> -->
     <br>
     <div class="row">
       <div class="col-12">
@@ -28,7 +28,7 @@
               <tr>
                   <th>No</th>
                   <th>Nama</th>
-                  <th class="text-center">Aksi</th>
+                  <!-- <th class="text-center">Aksi</th> -->
               </tr>
             </thead>
             <tbody>
@@ -37,13 +37,12 @@
               <tr>
                   <td width="10%">{{$no}}</td>
                   <td width="70%">{{$category->name}}</td>
-                  <td width="12%">
+                  <!-- <td width="12%">
                     <button data-toggle="modal" data-target="#edit{{$category->id}}" class="btn btn-primary"><i class="mdi mdi-tooltip-edit"></i></button>
                     <button data-toggle="modal" data-target="#hapus{{$category->id}}" class="btn btn-danger"><i class="mdi mdi-delete"></i></button>
-                  </td>
+                  </td> -->
               </tr>
               @php($no++)
-              @include('home.category.modal')
               @endforeach
             </tbody>
           </table>
@@ -53,7 +52,7 @@
   </div>
 </div>
 
-<!-- modal tambah -->
+{{--<!-- modal tambah -->
 <div class="modal fade" id="tambah" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -79,5 +78,5 @@
     </div>
   </div>
 </div>
-<!-- akhir modal tambah -->
+<!-- akhir modal tambah -->--}}
 @endsection
