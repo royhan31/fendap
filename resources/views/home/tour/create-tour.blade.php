@@ -26,7 +26,7 @@
                     </div>
                     <div class="form-group">
                         <label for="description">Deskripsi</label>
-                        <textarea class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" rows="8" placeholder="Masukan Deskripsi" required>{{old('description')}}</textarea>
+                        <textarea class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }} summernote-simple" name="description" rows="8" placeholder="Masukan Deskripsi" required>{{old('description')}}</textarea>
                         @if ($errors->has('description'))
                             <span class="invalid-feedback" role="alert">
                                 <strong>Deskripsi terlalu pendek</strong>

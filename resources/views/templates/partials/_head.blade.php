@@ -11,6 +11,7 @@
   <!-- plugin css for this page -->
   <!-- End plugin css for this page -->
   <!-- inject:css -->
+  <link rel="stylesheet" href="{{ asset('asset/vendors/summernote/dist/summernote-bs4.css')}}">
   <link rel="stylesheet" href="{{ asset('asset/css/vertical-layout-light/style.css')}}">
   <!-- endinject -->
   <link rel="shortcut icon" href="{{ asset('asset/images/bengkulu-mini.png')}}" />
