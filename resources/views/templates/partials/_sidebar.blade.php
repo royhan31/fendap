@@ -1,7 +1,7 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
   <ul class="nav">
     <li class="nav-item">
-      <a class="nav-link" href="{{route('home')}}">
+      <a style="text-decoration:none" class="nav-link" href="{{route('home')}}">
         <i class="mdi mdi-airplay menu-icon"></i>
         <span class="menu-title">Dashboard</span>
       </a>
@@ -17,7 +17,7 @@
     {{Request::is('home/tour/detail/*') ? 'active' : ''}}
   }@endif
   ">
-      <a class="nav-link" href="{{route('tour')}}">
+      <a style="text-decoration:none" class="nav-link" href="{{route('tour')}}">
         <i class="mdi mdi-folder-image menu-icon"></i>
         <span class="menu-title">Pariwisata</span>
       </a>

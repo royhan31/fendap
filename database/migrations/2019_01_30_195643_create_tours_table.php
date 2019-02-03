@@ -17,7 +17,7 @@ class CreateToursTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->integer('category_id')->unsigned();
-            $table->text('description');
+            $table->longtext('description');
             $table->string('image');
             $table->timestamps();
 

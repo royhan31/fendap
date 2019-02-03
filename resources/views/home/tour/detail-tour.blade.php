@@ -6,11 +6,11 @@
         <div class="card-body">
             <h4 class="card-title">{{$tour->title}}</h4>
             <h6 class="card-text">{{$tour->category->name}}</h6>
+            <p class="card-description">{!!$tour->description!!}</p>
             <br>
-            <p class="card-description">{{$tour->description}}</p>
-            <a href="{{route('tour.edit',$tour)}}" class="btn btn-info">Edit</a>
+            <a style="text-decoration:none" href="{{route('tour.edit',$tour)}}" class="btn btn-info">Edit</a>
             <button class="btn btn-danger" data-target="#hapus{{$tour->id}}" data-toggle="modal">Hapus</button>
-            <a href="{{route('tour')}}" class="btn btn-secondary">Kembali</a>
+            <a style="text-decoration:none" href="{{route('tour')}}" class="btn btn-secondary">Kembali</a>
         </div>
     </div>
     <!-- modal hapus -->

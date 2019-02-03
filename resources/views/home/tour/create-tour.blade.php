@@ -1,6 +1,12 @@
 @extends('templates.default')
 
 @section('content')
+@if ($errors->has('title') || $errors->has('description') || $errors->has('image') )
+<div class="alert alert-fill-danger" role="alert">
+  <i class="mdi mdi-alert-circle"></i>
+  Wisata Gagal Disimpan
+</div>
+@endif
     <div class="col-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
@@ -49,7 +55,7 @@
                       </div>
                     </div>
                     <button type="submit" class="btn btn-primary mr-2">Simpan</button>
-                    <a href="{{route('tour')}}" class="btn btn-light">Kembali</a>
+                    <a style="text-decoration:none" href="{{route('tour')}}" class="btn btn-secondary">Kembali</a>
                 </form>
             </div>
         </div>

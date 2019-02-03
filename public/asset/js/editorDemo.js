@@ -30,7 +30,9 @@
       minHeight: 250,
     });
     $(".summernote-simple").summernote({
-       dialogsInBody: true,
+      placeholder: 'Masukan Deskripsi',
+      tabsize: 1,
+      dialogsInBody: true,
       minHeight: 150,
       toolbar: [
         ['style', ['bold', 'italic', 'underline', 'clear']],

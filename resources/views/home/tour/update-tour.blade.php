@@ -1,6 +1,12 @@
 @extends('templates.default')
 
 @section('content')
+@if ($errors->has('title') || $errors->has('description') || $errors->has('image') )
+<div class="alert alert-fill-danger" role="alert">
+  <i class="mdi mdi-alert-circle"></i>
+  Wisata Gagal Disimpan
+</div>
+@endif
     <div class="col-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
@@ -30,7 +36,7 @@
                     </div>
                     <div class="form-group">
                         <label for="description">Deskripsi</label>
-                        <textarea class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }} summernote-simple" name="description" rows="8" placeholder="Masukan Deskripsi">{{old('description',$tour->description)}}</textarea>
+                        <textarea class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }} summernote-simple" name="description" rows="8">{!!old('description',$tour->description)!!}</textarea>
                         @if ($errors->has('description'))
                             <span class="invalid-feedback" role="alert">
                                 <strong>Deskripsi terlalu pendek</strong>
@@ -59,7 +65,7 @@
                       </div>
                     </div>
                     <button type="submit" class="btn btn-primary mr-2">Simpan</button>
-                    <a href="{{route('tour')}}" class="btn btn-light">Kembali</a>
+                    <a style="text-decoration:none" href="{{route('tour')}}" class="btn btn-secondary">Kembali</a>
                 </form>
             </div>
         </div>
