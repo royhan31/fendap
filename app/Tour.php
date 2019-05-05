@@ -6,11 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tour extends Model
 {
-  protected $fillable = [
-      'title','category_id','description','image',
-  ];
+  protected $guarded = [];
 
   public function category(){
-    return $this->belongsTo(Category::class,'category_id');
+    return $this->belongsTo(Category::class);
   }
+
 }

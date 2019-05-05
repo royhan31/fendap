@@ -15,6 +15,8 @@ class ApiTourController extends Controller
     'tours.image','tours.created_at')
     ->get();
 
+    //$tour = Tour::with('category')->get();
+
     return [
       'message' => 'success',
       'status' => 1,
@@ -37,6 +39,13 @@ class ApiTourController extends Controller
     'tours.image','tours.created_at')
     ->where('categories.slug',$category)
     ->get();
+
+    if ($tour->isEmpty()) {
+      return [
+        'message' => 'Not found',
+        'status' => 0,
+      ];
+    }
 
     return [
       'message' => 'success',

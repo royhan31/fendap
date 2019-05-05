@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Tour;
+use DB;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -25,7 +27,8 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::orderBy('name','ASC')->get();
-        return view('home.category.index',compact('categories'));
+        $tours = Tour::orderBy('id','DESC')->get();
+        return view('home.category.index',compact('categories','tours'));
     }
 
     /**

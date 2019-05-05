@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-  protected $fillable = [
-      'name','slug',
-  ];
+  protected $guarded = [];
+
+  public function tours(){
+    return $this->hasMany(Tour::class);
+  }
 }

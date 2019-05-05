@@ -38,7 +38,7 @@
                   </figcaption>
                 </figure>
                   <div class="text-center">
-                <a href="{{route('tour.detail',$tour)}}" class="btn btn-success btn-sm">Detail</a>
+                <a href="{{route('tour.detail',$tour)}}" class="btn btn-success btn-sm text-white">Detail</a>
                 <a href="{{route('tour.edit',$tour)}}" class="btn btn-info btn-sm">Edit</a>
                 <button class="btn btn-danger btn-sm" data-target="#hapus{{$tour->id}}" data-toggle="modal">Hapus</button>
                 </div>

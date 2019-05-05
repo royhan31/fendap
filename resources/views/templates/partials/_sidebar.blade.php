@@ -18,8 +18,14 @@
   }@endif
   ">
       <a style="text-decoration:none" class="nav-link" href="{{route('tour')}}">
-        <i class="mdi mdi-folder-image menu-icon"></i>
+        <i class="mdi mdi-folder-multiple-image menu-icon"></i>
         <span class="menu-title">Pariwisata</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a style="text-decoration:none" class="nav-link" href="{{route('category')}}">
+        <i class="mdi mdi-image-album menu-icon"></i>
+        <span class="menu-title">Kategori Wisata</span>
       </a>
     </li>
   </ul>
